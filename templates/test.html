@@ -1,0 +1,3 @@
+{% include 'base.html' %}
+
+This line is in a separate file called test.html whilst the above is in a file called base.html. test.html has an include statement to include base.html, base .html is passed a context to include the name John. To render the page test.html is called from a function in views.py at this point the argument 'John' is passed to the page. The base.html is included and the whole page is displayed thus.

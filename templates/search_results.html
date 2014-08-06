@@ -1,0 +1,14 @@
+{% include 'base.html' %}
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if reports %}
+    <p>Found {{ reports|length }} report{{ reports|pluralize }}.</p>
+    <table class="table table-striped table-hover">    
+        {% for report in reports %}
+        <tr><td>{{ report.event }}</td><td>{{ report.author }}</td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No reports matched your search criteria.</p>
+{% endif %}
