@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from GamingReports.models import Report
-from django.core.mail import send_mail
 from LiveOps.forms import ReportForm
 
 def homepage(request):
     return HttpResponse('Homepage')
+
+def display_report(request, id):
+    try:
+        id = int(id)
+    except ValueError:
+        raise Http404()
+    report = Report.objects.get(id=id)
+    return render(request, 'report.html', {'report_id': id, 'report': report})
 
 def hello(request): 
     ua = request.META['HTTP_USER_AGENT']   

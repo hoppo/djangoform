@@ -1,0 +1,15 @@
+{% include 'base.html' %}
+
+Display report number {{report_id}}.
+
+<table>
+<tr><td>Event</td><td>{{ report.event }}</td></tr>
+<tr><td>Author</td><td>{{ report.author }}</td></tr>
+<tr><td>Date and Time</td><td>{{ report.datetime }}</td></tr>
+<tr><td>Diagnosis</td><td>{{ report.diagnosis }}</td></tr>
+<tr><td>Impact</td><td>{{ report.impact }}</td></tr>
+<tr><td>Resolution</td><td>{{ report.resolution }}</td></tr>
+<tr><td>Responsibility</td><td>{{ report.responsibility }}</td></tr>
+<tr><td>Actionable</td><td>{{ report.actionable }}</td></tr>
+<tr><td>Action</td><td>{{ report.action }}</td></tr>
+</table>

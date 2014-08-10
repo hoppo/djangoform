@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^hello/$', hello),
     url(r'^report/$', report),
     url(r'^search/$', search),
+    url(r'^search/(\d+)/$', display_report),
     url(r'^display_meta/$', display_meta),
     url(r'^report/added/$', added),
     # Examples:

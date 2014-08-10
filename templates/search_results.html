@@ -4,9 +4,9 @@
 
 {% if reports %}
     <p>Found {{ reports|length }} report{{ reports|pluralize }}.</p>
-    <table class="table table-striped table-hover">    
+    <table border=1>    
         {% for report in reports %}
-        <tr><td>{{ report.event }}</td><td>{{ report.author }}</td></tr>
+        <tr><td><a href="{{ report.id }}">view</a></td><td>{{ report.event }}</td><td>{{ report.author }}</td><td>{{ report.diagnosis }}</td><td>{{ report.resolution }}</td></tr>
         {% endfor %}
     </table>
 {% else %}
