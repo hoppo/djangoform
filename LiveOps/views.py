@@ -14,13 +14,6 @@ def display_report(request, id):
     report = Report.objects.get(id=id)
     return render(request, 'report.html', {'report_id': id, 'report': report})
 
-def hello(request): 
-    ua = request.META['HTTP_USER_AGENT']   
-    return render(request, 'hello.html', {'person_name': 'Hoppo', 'browser': ua})
-
-def test(request):
-    return render(request, 'test.html', {'person_name': 'John'})
-
 def report(request):
     errors = []
     if request.method == 'POST':
@@ -50,8 +43,3 @@ def search(request):
                 {'reports': reports, 'query': q})
     return render(request, 'search_form.html',
         {'error': error})
-
-def display_meta(request):
-    values = request.META.items()
-    values.sort()
-    return render(request, 'display_meta.html', {'values': values})
